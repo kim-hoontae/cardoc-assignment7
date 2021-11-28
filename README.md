@@ -7,7 +7,7 @@
 http://3.144.122.195:8000/  
 
 ### Documentation API  
-https://documenter.getpostman.com/view/16891318/UVC8CRFW  
+[API명세서](https://documenter.getpostman.com/view/16843911/UVJckGTn) 
 
 ## 1. 배경 및 공통 요구사항
 
