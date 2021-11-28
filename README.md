@@ -150,7 +150,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 **endpoint** : `http://3.144.122.195:8000/users/signup`
 - ```request``` : body
 
-```
+```python
 {
     "id": "gnsxo9",
     "password": "!!!gnsxo9"
@@ -158,7 +158,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ```
 - ```로그인 성공시``` : status_code : 201
 
-```
+```python
 - JSON
 {
     "ID": "gnsxo9",
@@ -169,7 +169,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 - ```회원가입 실패시``` : 
 1. 비밀번호가 8자리이상 특수문자 포함 : 400, 
 2. 키에러가 발생했을시 status_code : 400
-```
+```python
 - JSON
 {
     1: "MESSAGE":"NOT_PASSWORD_FORMAT",
@@ -182,7 +182,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 **endpoint** : `http://3.144.122.195:8000/users/login`
 
 - ```request``` : body
-```
+```python
 - JSON
 {
     "id": "gnsxo9",
@@ -190,7 +190,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 }
 ```
 - ```로그인 성공시``` : status_code 200,
-```
+```python
 - JSON
 {
     "ID": "gnsxo9",
@@ -203,7 +203,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 1. 일치하는 아이디 없을때 : 400,
 2. 비밀번호와 아이디가 일치하지 않을때 : 400
 3. 키에러 :400 
-``` 
+``` python
 - JSON
 {
     1. "MESSAGE": "INVALID_ID",
@@ -215,7 +215,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ### 타이어 생성 API
 **endpoint** : `http://3.144.122.195:8000/cars`
 - ```request``` : body
-```
+```python
 [
     {
         "id": "gnsxo12",
@@ -233,7 +233,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ```
 
 - ```타이어 생성 성공시``` : status 200,
-``` 
+``` python
 - JSON
 {
     "results": [
@@ -253,7 +253,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 }
 ```
 - ```타이어 중복된 타이어가 있을시``` : status 200, 
-``` 
+``` python
 - JSON
 {
     "results": [
@@ -274,7 +274,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ```
 
 - ```요청이 5개 이상일시``` : status 400, 
-``` 
+``` python
 - JSON
 {
     "MESSAGE": "MANY_REQUESTS"
@@ -282,7 +282,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ```
 
 - ```키에러``` : status 400, 
-``` 
+``` python
 - JSON
 {
     "MESSAGE": "KEY_ERROR"
@@ -297,7 +297,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 
 - ``` 조회 성공 시 ``` : status 200
 
-```
+```python
 {
     "USER_TIRE": [
         {
@@ -344,7 +344,7 @@ Tool : <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&log
 ```
 
 - ```사용자의 정보에 저장된 타이어정보가 없을때``` : status 404,
-``` 
+``` python
 {
   "MESSAGE": "NOT_FOUND"
 }
