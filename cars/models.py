@@ -13,8 +13,11 @@ class Car(models.Model):
     front_tire = models.ForeignKey('Tire', on_delete=models.CASCADE, related_name='front_tire')
     rear_tire  = models.ForeignKey('Tire', on_delete=models.CASCADE, related_name='rear_tire')
 
+    class Meta:
+        db_table = 'cars'
 
-class TirePosition(models.Model):
+
+class Position(models.Model):
     class Type(models.IntegerChoices):
         FRONT = 1
         REAR  = 2
@@ -22,11 +25,11 @@ class TirePosition(models.Model):
     name = models.CharField(max_length=15)
     
     class Meta:
-        db_table = 'tire_positions'
+        db_table = 'positions'
 
 
 class Tire(models.Model):
-    tire_position = models.ForeignKey('TirePosition', on_delete=models.PROTECT)
+    position = models.ForeignKey('Position', on_delete=models.PROTECT)
     width        = models.PositiveSmallIntegerField()
     aspect_ratio = models.PositiveSmallIntegerField()
     wheel_size   = models.PositiveSmallIntegerField()
