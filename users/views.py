@@ -33,7 +33,7 @@ class LoginView(View):
             data = json.loads(request.body)
 
             if not User.objects.filter(id=data['id']).exists():
-                return JsonResponse({'MESSAGE':'INVALID_ID'},status=401)
+                return JsonResponse({'MESSAGE':'INVALID_ID'},status=400)
 
             user = User.objects.get(id= data['id'])
 
@@ -42,6 +42,6 @@ class LoginView(View):
 
                 return JsonResponse({'ID': user.id, 'MESSAGE':'SUCCESS', 'TOKEN': access_token},status=200)
 
-            return JsonResponse({'MESSAGE':'INVALID_USER'},status=401)
+            return JsonResponse({'MESSAGE':'INVALID_USER'},status=400)
         except KeyError:
             return JsonResponse({'MESSAGE':'KEY_ERROR'},status=400)
